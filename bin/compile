@@ -45,7 +45,7 @@ build_pubspec() {
   
   dart pub global activate dart_frog_cli
  
-  message "*** Running webdev build"
+  message "*** Running dart_frog build"
   if [[ -z "$DART_BUILD_CMD" ]]
   then
     message 'Building with "webdev build"'
