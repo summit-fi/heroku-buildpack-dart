@@ -40,10 +40,8 @@ build_pubspec() {
   export PATH=$PATH:$DART_PATH:$PUB_CACHE_BIN
   message "*** Running dart pub get"
 
-  dart pub --version
-
   #start pub from the /app folder to have correct symlink paths
-  dart pub get  
+  dart pub get 
   
   dart pub global activate dart_frog_cli
   if [ -d "web" ]
