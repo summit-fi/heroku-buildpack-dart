@@ -122,7 +122,7 @@ message "-----> Dart reports version: $CAN_DART_RUN"
 cd $BUILD_DIR
 
 
-PUBSPEC_PATH=$BUILD_DIR/pubspec.yaml
+PUBSPEC_PATH="./pubspec.yaml"
 message "-----> PUBSPEC_PATH $PUBSPEC_PATH"
 
 if [ -z "$PUBSPEC_PATH" ]
