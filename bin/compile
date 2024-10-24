@@ -45,6 +45,9 @@ build_pubspec() {
   
   dart pub global activate dart_frog_cli
  
+  message "*** Print contents of $PUB_CACHE_BIN"
+  ls -la /app/pub-cache/bin
+
   message "*** Running dart_frog build"
   if [[ -z "$DART_BUILD_CMD" ]]
   then
