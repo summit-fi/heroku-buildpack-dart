@@ -48,8 +48,8 @@ build_pubspec() {
   message "*** Running dart_frog build"
   if [[ -z "$DART_BUILD_CMD" ]]
   then
-    message 'Building with "webdev build"'
-    webdev build
+    message 'Building with "dart_frog build"'
+    dart_frog build
   else
     message "Building with \"$DART_BUILD_CMD\""
     eval $DART_BUILD_CMD
