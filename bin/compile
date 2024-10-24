@@ -44,20 +44,17 @@ build_pubspec() {
   dart pub get 
   
   dart pub global activate dart_frog_cli
-  if [ -d "web" ]
+ 
+  message "*** Running webdev build"
+  if [[ -z "$DART_BUILD_CMD" ]]
   then
-    message "*** Running webdev build"
-    if [[ -z "$DART_BUILD_CMD" ]]
-    then
-      message 'Building with "webdev build"'
-      webdev build
-    else
-      message "Building with \"$DART_BUILD_CMD\""
-      eval $DART_BUILD_CMD
-    fi
+    message 'Building with "webdev build"'
+    webdev build
   else
-    message '*** Skipping pub build because "web" folder not found'
+    message "Building with \"$DART_BUILD_CMD\""
+    eval $DART_BUILD_CMD
   fi
+
 }
 
 export_env_dir "$3"
