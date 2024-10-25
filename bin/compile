@@ -8,7 +8,7 @@ unset GIT_DIR
 
 function message {
   echo "$1"
-  #sync
+  sync
 }
 
 indent() {
@@ -42,7 +42,7 @@ fi
 
 mkdir -p "$BUILD_DIR"/.heroku/git-lfs/bin
 cp "$PACKAGE_DIR"/git-lfs "$BUILD_DIR"/.heroku/git-lfs/bin/
-export PATH="\$HOME/.heroku/git-lfs/bin:\$PATH"
+export PATH="$HOME/.heroku/git-lfs/bin:$PATH"
 
 
 message "PATH $PATH"
