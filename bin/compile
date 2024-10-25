@@ -57,9 +57,14 @@ export PATH="$BUILD_DIR/.heroku/git-lfs/bin/:$PATH"
 message "PATH $PATH"
 ls -la $BUILD_DIR/.heroku/git-lfs/bin
 
+git lfs install
+git-lfs fetch --all
+git-lfs checkout
 
-$BUILD_DIR/.heroku/git-lfs/bin/git-lfs fetch --all
-$BUILD_DIR/.heroku/git-lfs/bin/git-lfs checkout
+
+# $BUILD_DIR/.heroku/git-lfs/bin/git-lfs 
+# $BUILD_DIR/.heroku/git-lfs/bin/git-lfs fetch --all
+# $BUILD_DIR/.heroku/git-lfs/bin/git-lfs checkout
 
 # https://devcenter.heroku.com/articles/buildpack-api
 export_env_dir() {
