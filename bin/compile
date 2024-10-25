@@ -59,7 +59,7 @@ ls -la $BUILD_DIR/.heroku/git-lfs/bin
 
 
 $BUILD_DIR/.heroku/git-lfs/bin/git-lfs fetch --all
-$BUILD_DIR/.heroku/git-lfs/bin/git-lfs lfs checkout
+$BUILD_DIR/.heroku/git-lfs/bin/git-lfs checkout
 
 # https://devcenter.heroku.com/articles/buildpack-api
 export_env_dir() {
