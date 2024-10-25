@@ -57,9 +57,15 @@ export PATH="$BUILD_DIR/.heroku/git-lfs/bin/:$PATH"
 message "PATH $PATH"
 ls -la $BUILD_DIR/.heroku/git-lfs/bin
 
+message "PWD"
+pwd
+
+message "GIT STATUS"
+git status
 git lfs install
-git-lfs fetch --all
-git-lfs checkout
+git lfs version
+git lfs fetch --all
+git lfs checkout
 
 
 # $BUILD_DIR/.heroku/git-lfs/bin/git-lfs 
@@ -195,5 +201,5 @@ fi
 # I think heroku deletes all the contents of /app and replaces it with
 # whatever is in $BUILD_DIR, so copy over the pub-cache. Why not put it in
 # $BUILD_DIR in the first place? because we need symlinks setup correctly.
-cp -R $PUB_CACHE $BUILD_DIR/pub-cache
-message `ls -l $BUILD_DIR/pub-cache`
+#cp -R $PUB_CACHE $BUILD_DIR/pub-cache
+#message `ls -l $BUILD_DIR/pub-cache`
