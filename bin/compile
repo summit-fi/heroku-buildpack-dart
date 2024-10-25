@@ -8,12 +8,14 @@ unset GIT_DIR
 
 function message {
   echo "$1"
-  sync
+  #sync
 }
 
 indent() {
   sed -u "s/^/       /"
 }
+
+export DART_ENV_DYNO=true
 
 BUILD_DIR=$1
 CACHE_DIR=$2
@@ -49,12 +51,6 @@ ls -la $HOME/.heroku/git-lfs/bin
 
 git lfs fetch --all
 git lfs checkout
-
-
-function message {
-  echo "$1"
-  sync
-}
 
 # https://devcenter.heroku.com/articles/buildpack-api
 export_env_dir() {
