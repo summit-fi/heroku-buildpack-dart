@@ -28,6 +28,7 @@ if [ ! -d "$PACKAGE_DIR" ]; then
     curl --silent --show-error --location --output "$CACHE_DIR/$PACKAGE_FILENAME" $DOWNLOAD_URL
   fi
 
+  message "Unpacking $PACKAGE_FILENAME"
   mkdir "$PACKAGE_DIR"
   tar --extract --file "$CACHE_DIR/$PACKAGE_FILENAME" --directory "$PACKAGE_DIR" git-lfs
   rm "$CACHE_DIR/$PACKAGE_FILENAME"
@@ -37,7 +38,9 @@ mkdir -p "$BUILD_DIR"/.heroku/git-lfs/bin
 cp "$PACKAGE_DIR"/git-lfs "$BUILD_DIR"/.heroku/git-lfs/bin/
 
 
+message "-----> current dir"
 ls -la .
+
 
 git lfs fetch --all
 git lfs checkout
