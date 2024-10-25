@@ -58,8 +58,8 @@ message "PATH $PATH"
 ls -la $BUILD_DIR/.heroku/git-lfs/bin
 
 
-git lfs fetch --all
-git lfs checkout
+$BUILD_DIR/.heroku/git-lfs/bin/git-lfs fetch --all
+$BUILD_DIR/.heroku/git-lfs/bin/git-lfs lfs checkout
 
 # https://devcenter.heroku.com/articles/buildpack-api
 export_env_dir() {
