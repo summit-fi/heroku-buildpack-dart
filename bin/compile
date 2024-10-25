@@ -48,7 +48,7 @@ fi
 message "Create dir $BUILD_DIR/.heroku/git-lfs/bin"
 mkdir -p "$BUILD_DIR"/.heroku/git-lfs/bin
 
-message "Copy file $PACKAGE_DIR"/git-lfs $BUILD_DIR/.heroku/git-lfs/bin/
+message "Copy file $PACKAGE_DIR/git-lfs $BUILD_DIR/.heroku/git-lfs/bin/"
 cp "$PACKAGE_DIR"/git-lfs "$BUILD_DIR"/.heroku/git-lfs/bin/
 
 export PATH="$HOME/.heroku/git-lfs/bin:$PATH"
