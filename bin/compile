@@ -36,12 +36,21 @@ if [ ! -d "$PACKAGE_DIR" ]; then
 
   message "Unpacking $PACKAGE_FILENAME"
   mkdir "$PACKAGE_DIR"
-  tar --extract --file "$CACHE_DIR/$PACKAGE_FILENAME" --directory "$PACKAGE_DIR" git-lfs
+
+  message "created $PACKAGE_DIR"
+  pwd $PACKAGE_DIR
+  ls -la $PACKAGE_DIR
+
+  tar --verbose --extract --file "$CACHE_DIR/$PACKAGE_FILENAME" --directory "$PACKAGE_DIR" git-lfs
   rm "$CACHE_DIR/$PACKAGE_FILENAME"
 fi
 
+message "Create dir $BUILD_DIR/.heroku/git-lfs/bin"
 mkdir -p "$BUILD_DIR"/.heroku/git-lfs/bin
+
+message "Copy file $PACKAGE_DIR"/git-lfs "$BUILD_DIR"/.heroku/git-lfs/bin/
 cp "$PACKAGE_DIR"/git-lfs "$BUILD_DIR"/.heroku/git-lfs/bin/
+
 export PATH="$HOME/.heroku/git-lfs/bin:$PATH"
 
 
