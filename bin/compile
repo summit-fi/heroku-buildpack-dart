@@ -6,6 +6,10 @@ set -e
 #set -x
 unset GIT_DIR
 
+function message {
+  echo "$1"
+  sync
+}
 
 indent() {
   sed -u "s/^/       /"
