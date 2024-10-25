@@ -64,6 +64,8 @@ message "LS -LA"
 ls -la .
 
 
+cd $BUILD_DIR
+
 message "GIT STATUS"
 git status
 git lfs install
