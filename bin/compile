@@ -57,14 +57,14 @@ export PATH="$BUILD_DIR/.heroku/git-lfs/bin/:$PATH"
 message "PATH $PATH"
 ls -la $BUILD_DIR/.heroku/git-lfs/bin
 
+cd $BUILD_DIR
+
 message "PWD"
 pwd
 
 message "LS -LA"
 ls -la .
 
-
-cd $BUILD_DIR
 
 message "GIT STATUS"
 git status
