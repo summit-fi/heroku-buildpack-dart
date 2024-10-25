@@ -29,9 +29,7 @@ PACKAGE_DIR="$CACHE_DIR/${PACKAGE_FILENAME%.tar.gz}"
 
 echo "-----> Installing git-lfs-linux-amd64-$GIT_LFS_VERSION"
 
-if [ ! -f "$CACHE_DIR/$PACKAGE_FILENAME" ]; then
-  curl --silent --show-error --location --output "$CACHE_DIR/$PACKAGE_FILENAME" $DOWNLOAD_URL
-fi
+curl --show-error --location --output "$CACHE_DIR/$PACKAGE_FILENAME" $DOWNLOAD_URL
 
 message "Unpacking $PACKAGE_FILENAME"
 mkdir "$PACKAGE_DIR"
