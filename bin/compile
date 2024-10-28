@@ -66,7 +66,8 @@ message "LS -LA"
 ls -la .
 
 message "Downloading git"
-git clone --no-checkout --depth=1 --branch develop  git@github.com:summit-fi/resapp-tests.git .
+git clone --no-checkout --depth=1 --branch develop  git@github.com:summit-fi/resapp-tests.git git
+mv git/.git ./
 
 message "GIT STATUS"
 git status
@@ -77,6 +78,12 @@ git lfs checkout
 
 message "LS -LA"
 ls -la .
+
+
+message "Removing git"
+rm -r .git
+rm -r git
+
 
 
 # $BUILD_DIR/.heroku/git-lfs/bin/git-lfs 
